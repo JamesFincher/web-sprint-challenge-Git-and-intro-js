@@ -242,23 +242,23 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 // itterate for each index and extract the years value, and if BOTH date born is grater then equal too 1900 && less then equal to 2000, result.push(array[i].name) and return the array after
 function get20s(array) {
-  var results = [];
-  console.log(results);
+  var threeresults = [];
+  console.log(threeresults);
   for (let i = 0; i < array.length; i++) {
     let years = array[i].years;
     let CurName = array[i].name;
     let broken = [];
     broken = years.split(" ");
     let low = broken[0];
-    var high = broken[2];
-    if (high <= 2000 && low >= 1900) {
-      results.push(CurName);
+    var threehigh = broken[2];
+    if (threehigh <= 2000 && low >= 1900) {
+      threeresults.push(CurName);
     } else console.log("no");
   }
-  return results;
+  return threeresults;
 }
 
-console.log(get20s(artists));
+// console.log(get20s(artists));
 /*Your Code Here*/
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -270,10 +270,12 @@ Use removeArtist to do the following:
 
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function removeArtist(array, number) {
+  let curArray = array;
+  curArray.splice(number, 1);
+  return curArray.length;
 }
-
+console.log(removeArtist(artists, 18));
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
 1. Receive an array
