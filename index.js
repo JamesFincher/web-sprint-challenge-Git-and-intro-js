@@ -366,11 +366,26 @@ Use artistByCountry to do the following:
 
 For example artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya', 'El Greco' ]
 */
+/*
+need to set an array to return a a list of artests
+itterate thru an array searching for array.nationality, if it matches string, add  array i . country value to returned array... return array
 
-function artistByCountry(/*Your Code Here*/) {
+*/
+
+function artistByCountry(array, nationality) {
+  const returnMe = [];
+  for (let i = 0; i < array.length; i++) {
+    const curNat = array[i].nationality;
+    const curNam = array[i].name;
+    if (curNat === nationality) {
+      returnMe.push(curNam);
+    }
+  }
+  return returnMe;
+
   /*Your Code Here*/
 }
-
+console.log(artistByCountry(artists, "Spanish"));
 /* ***** END OF TASKS ***** */
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑*/
