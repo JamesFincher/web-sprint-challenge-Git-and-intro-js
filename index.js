@@ -208,17 +208,17 @@ Practice accessing data above by console.log-ing following items:
 (no functions needed) */
 
 //(1) Name of the first artist (0th index) in the array
-console.log(artists[0].name);
+// console.log(artists[0].name);
 
 //(2) Bio of the third artist (2nd index) in the array
-console.log(artists[2].bio);
+// console.log(artists[2].bio);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
 artists[8].name = "Vincent Van Gogh";
 
-console.log(artists[8].name);
+// console.log(artists[8].name);
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
 Use getArtistByIndex to do the following:
 1. Receive an array
@@ -227,8 +227,8 @@ Use getArtistByIndex to do the following:
 
 Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(array, number) {
+  return `the artist at index ${array[number].id} is ${array[number].name}`;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -240,14 +240,31 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
-function get20s(/*Your Code Here*/) {
-  /*Your Code Here*/
+// itterate for each index and extract the years value, and if BOTH date born is grater then equal too 1900 && less then equal to 2000, result.push(array[i].name) and return the array after
+function get20s(array) {
+  var results = [];
+  console.log(results);
+  for (let i = 0; i < array.length; i++) {
+    let years = array[i].years;
+    let CurName = array[i].name;
+    let broken = [];
+    broken = years.split(" ");
+    let low = broken[0];
+    var high = broken[2];
+    if (high <= 2000 && low >= 1900) {
+      results.push(CurName);
+    } else console.log("no");
+  }
+  return results;
 }
+
+console.log(get20s(artists));
+/*Your Code Here*/
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
-1. Receive an array
-2. Receive a number which is the desired index in the array
+1. Receive an array  
+2. Receive a number which is the desired index in the arr ay
 3. The function should remove an artist from the array at the index
 4. Return the length of the remaining dataset.
 
